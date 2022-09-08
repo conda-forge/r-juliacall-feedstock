@@ -41,12 +41,14 @@ requirements:
     - r-base
     - r-rcpp >=0.12.7
     - r-knitr >=1.28
+    - r-rjson
 
   run:
     - julia                        # [not win]
     - r-base
     - r-rcpp >=0.12.7
     - r-knitr >=1.28
+    - r-rjson
 
 test:
   commands:

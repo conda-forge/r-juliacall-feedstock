@@ -44,7 +44,7 @@ requirements:
     - r-rjson
 
   run:
-    - julia                        # [not win]
+    - julia                        # [linux64 and osx]
     - r-base
     - r-rcpp >=0.12.7
     - r-knitr >=1.28

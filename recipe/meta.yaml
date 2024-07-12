@@ -1,7 +1,6 @@
 {% set version = "0.17.5" %}
 
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-juliacall
@@ -14,9 +13,8 @@ source:
   sha256: 92542f9f02fe43702c18cf6c5a52fcbfc5ef3da6a2f73bfded773f4fc5edd90c
 
 build:
-  merge_build_host: true  # [win]
   # If this is a new build for the same version, increment the build number.
-  number: 2
+  number: 3
   # no skip
 
   # This is required to make R link correctly on Linux.
@@ -28,7 +26,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]

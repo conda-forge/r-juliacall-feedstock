@@ -1,4 +1,4 @@
-{% set version = "0.17.5" %}
+{% set version = "0.17.6" %}
 
 {% set posix = 'm2-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/JuliaCall_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/JuliaCall/JuliaCall_{{ version }}.tar.gz
-  sha256: 92542f9f02fe43702c18cf6c5a52fcbfc5ef3da6a2f73bfded773f4fc5edd90c
+  sha256: c1800d9ec0cf4def7fd969374afc2ec371dfa1b5eb0602301b13fb75264a9a63
 
 build:
   # If this is a new build for the same version, increment the build number.
-  number: 3
+  number: 0
   # no skip
 
   # This is required to make R link correctly on Linux.
